@@ -4,7 +4,7 @@ Adds a context menu item to the File Explorer to run xdg-open. Only works on com
 
 ## Features
 
-\!\[Context Menu\]\(screenshot.png\)
+![Context Menu](screenshot.png)
 
 ## Requirements
 

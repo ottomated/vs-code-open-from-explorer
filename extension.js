@@ -7,13 +7,13 @@ const fs = require('fs');
  */
 function activate(context) {
 	let disposable = vscode.commands.registerCommand('extension.openfile', (file) => {
-		let type = exec(`xdg-mime query filetype "${file.path}"`).toString().trim();
-		if (!type)
-			return vscode.window.showErrorMessage(`Could not determine filetype.`);
-		let app = exec(`xdg-mime query default "${type}"`).toString().trim();
-		if (!app)
-			return vscode.window.showErrorMessage(`Could not determine default app.`);
 		try {
+			let type = exec(`xdg-mime query filetype "${file.path}"`).toString().trim();
+			if (!type)
+				return vscode.window.showErrorMessage(`Could not determine filetype.`);
+			let app = exec(`xdg-mime query default "${type}"`).toString().trim();
+			if (!app)
+				return vscode.window.showErrorMessage(`Could not determine default app.`);
 			exec(`xdg-open "${file.path}"`);
 			vscode.window.showInformationMessage(`Opening in ${getAppName(app)}.`);
 		} catch (e) {
