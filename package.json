@@ -3,6 +3,10 @@
 	"displayName": "Open From Explorer",
 	"description": "Adds a context menu item to the File Explorer to run xdg-open. Only works on common linux systems.",
 	"version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ottomated/vs-code-open-from-explorer.git"
+  },
 	"publisher": "Ottomated",
 	"engines": {
 		"vscode": "^1.41.0"
