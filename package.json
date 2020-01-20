@@ -1,8 +1,9 @@
 {
-	"name": "open-from-explorer",
+	"name": "xdg-open-explorer",
 	"displayName": "Open From Explorer",
-	"description": "",
-	"version": "0.0.1",
+	"description": "Adds a context menu item to the File Explorer to run xdg-open. Only works on common linux systems.",
+	"version": "0.1.0",
+	"publisher": "Ottomated",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -10,16 +11,25 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.openfile"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.openfile",
+				"title": "Open with System"
 			}
-		]
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"when": "!explorerResourceIsFolder && isLinux",
+					"command": "extension.openfile",
+					"group": "navigation@99"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"test": "node ./test/runTest.js"
