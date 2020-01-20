@@ -19,6 +19,10 @@ No Windows or MacOS support
 
 ## Release Notes
 
+### 0.1.1
+
+Added error handling
+
 ### 0.1.0
 
 Initial release
